@@ -6,7 +6,7 @@ March 2, 2016
 
 This is an temporary repository for program assignments on Explolatory Data Aanalysis provided by Coursera and John's hopkins University.
 
-Simply run "[data_preparation.R]("https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/data_preparation.R")" to reproduce my results in your working directory..
+Simply run [data_preparation.R](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/data_preparation.R) to reproduce my results in your working directory..
 
 I've used **"Individual household electric power cosumption Data set"** on coursera.
 
@@ -20,7 +20,7 @@ I've used **"Individual household electric power cosumption Data set"** on cours
 
 ---
 
-# review Criteria 
+# Review Criteria 
 
 This is the review criteria which is written by Roger Peng, one of our instructor.
 
@@ -28,7 +28,7 @@ please read it carefully before you check my scripts.
 
 ## Criteria
 
-1. Was a valid GitHub URL containing a git repository submitted?
+1. Was a valid [GitHub URL](https://github.com/airbj31/04ExpDataAnalysis/tree/master/week1) containing a git repository submitted?
 
 2. Does the GitHub repository contain at least one commit beyond the original fork?
 
@@ -155,17 +155,18 @@ Anyway, I creates new variable named **DateTime** from above descripted way usin
 
 # Content of the repositories
 
-## used function and R code.
+## Used function and R code.
 
-- **[LoadLib.R]("https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/LoadLIB.R")**
+- **[LoadLIB.R](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/LoadLIB.R)**
     
-    make funcion named **LoadLIB()**. 
+    make function named **[LoadLIB()](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/LoadLIB.R)**.
+    
     this function used to load modules used in the assignment. 
     If you do not have the libraries, it stops the script.
       
-- **data_preparation.R**
+- **[data_preparation.R](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/data_preparation.R)**
 
-    This code automatically load data, **[LoadLIB.R]("https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/LoadLIB.R)** and make plots I submitted.
+    This code automatically load data, **[LoadLIB.R](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/LoadLIB.R)** and make plots I submitted.
 
     this code need several minutes to finish depending on the system. because :
         
@@ -175,15 +176,15 @@ Anyway, I creates new variable named **DateTime** from above descripted way usin
     
       - in this step, I used lubridate library which we learned in previous swirl lesson on **Getting and Cleaning data** course.
       
-      - details are descripted in **[workflow](#Workflow)** section.
+      - details are descripted in **workflow** section.
 
 ## Results
 
-- **[plot1.png](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/plot1.png)**
+- **[plot1.png](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/plot1.png)** Simple histogram showing distribution of Global Active Power (killowatts)
 
-- **[plot2.png](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/plot2.png)**
+- **[plot2.png](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/plot2.png)** simple line graph showing changes of Global Active Power between Thursday(Feb-1-2007) and Friday(Feb-2-2007).
 
-- **[plot3.png](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/plot1.png)** 
+- **[plot3.png](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/plot3.png)**. grouped line graph showing energe sub metering changes between hursday(Feb-1-2007) and Friday(Feb-2-2007)
 
 - **[plot4.png](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/plot1.png)** 2 x 2 plots which shows the relationship of datetime to Global Active Power, Voltage, Energy sub metering and Global reactive power respectively. 
     
@@ -237,18 +238,7 @@ Anyway, I creates new variable named **DateTime** from above descripted way usin
   ## this is required to print weekdays in English.
   ## only valid for windows user.
   Sys.setlocale("LC_ALL","English")
-```
 
-```
-## Warning in Sys.setlocale("LC_ALL", "English"): OS reports request to set
-## locale to "English" cannot be honored
-```
-
-```
-## [1] ""
-```
-
-```r
   ## define the libraries we need
 
   lib<-c("tidyr","dplyr","lubridate")
@@ -258,20 +248,7 @@ Anyway, I creates new variable named **DateTime** from above descripted way usin
   ## if the script stopped and show error messages, please install the required libraries before runing whole codes.
   
   LoadLIB(lib)
-```
 
-```
-## [[1]]
-## [1] TRUE
-## 
-## [[2]]
-## [1] TRUE
-## 
-## [[3]]
-## [1] TRUE
-```
-
-```r
   ## declaration of variables for downloading data
   fileURL<-"https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
   
@@ -320,9 +297,10 @@ tdf <- filter(data,Date=="1/2/2007" | Date=="2/2/2007") %>%
 ```r
   ## draw simple histogram.  
   with(tdf,hist(Global_active_power,col="red",main="Global Active Power",xlab="Global Active Power (killowatts)"))
-```
 
-![](README_files/figure-html/Plot1-1.png)
+  dev.copy(device=png, "plot1.png",unit="px",width=480,height=480)
+  dev.off()
+```
 
 ## STEP3 : Make Plot 2
 
@@ -342,9 +320,10 @@ with(tdf,lines(DateTime,Global_active_power))
 
   ## annotate the xlab
   title(ylab="Global Active Power (kilowatts)")
+  
+  dev.copy(device=png, "plot2.png",unit="px",width=480,height=480)
+  dev.off()
 ```
-
-![](README_files/figure-html/Plot2-1.png)
 
 ## STEP4 : Make plot 3
 
@@ -377,9 +356,11 @@ with(tdf,lines(DateTime,Global_active_power))
   ##                with color (col=c("black","red","blue"))
   ##                with legend item (legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
   legend("topright", lty=1, col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+  
+## copy graph on screen deviceto file with 480x480 size
+dev.copy(device=png, "plot3.png",unit="px",width=480,height=480)
+dev.off()
 ```
-
-![](README_files/figure-html/Plot3-1.png)
 
 ## STEP5 : Make Plot 4.
 
@@ -405,7 +386,7 @@ with(tdf,plot(DateTime,Voltage,type="n",main="",ylab="Voltage",xlab="datetime"))
 with(tdf,lines(DateTime,Voltage))
 title(ylab="Voltage")
 
-
+# draw 3rd graph
 with(tdf,plot(DateTime,Sub_metering_1,type="n",main="",ylab="",xlab=""))
 with(tdf,lines(DateTime,Sub_metering_1, col="black"))
 with(tdf,lines(DateTime,Sub_metering_2, col="red"))
@@ -413,9 +394,13 @@ with(tdf,lines(DateTime,Sub_metering_3, col="blue"))
 title(ylab="Energey sub metering")
 legend("topright", lty=1, cex=0.75,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),bty="n")
 
+# draw 4th graph.
 with(tdf,plot(DateTime,Global_reactive_power,type="n",main="",xlab="datetime"))
 with(tdf,lines(DateTime,Global_reactive_power))
+
+## copy graph on screen deviceto file with 480x480 size
+dev.copy(device=png, "plot4.png",unit="px",width=480,height=480)
+dev.off()
 ```
 
-![](README_files/figure-html/unnamed-chunk-4-1.png)
 
