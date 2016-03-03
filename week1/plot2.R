@@ -1,0 +1,6 @@
+#png(width=480,height=480,filename="plot2.png")
+with(tdf,plot(DateTime,Global_active_power,type="n",main="",ylab="",xlab=""))
+with(tdf,lines(DateTime,Global_active_power))
+title(ylab="Global Active Power (kilowatts)")
+dev.copy(device=png, "plot2.png",unit="px",width=480,height=480)
+dev.off()

@@ -1,0 +1,10 @@
+## Fig3.
+#png(width=480,height=480,filename="plot3.png")
+with(tdf,plot(DateTime,Sub_metering_1,type="n",main="",ylab="",xlab=""))
+with(tdf,lines(DateTime,Sub_metering_1, col="black"))
+with(tdf,lines(DateTime,Sub_metering_2, col="red"))
+with(tdf,lines(DateTime,Sub_metering_3, col="blue"))
+title(ylab="Energey sub metering")
+legend("topright", lty=1, col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+dev.copy(device=png, "plot1.png",unit="px",width=480,height=480)
+dev.off()
