@@ -186,7 +186,7 @@ Anyway, I creates new variable named **DateTime** from above descripted way usin
 
 - **[plot3.png](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/plot3.png)**. grouped line graph showing energe sub metering changes between hursday(Feb-1-2007) and Friday(Feb-2-2007)
 
-- **[plot4.png](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/plot1.png)** 2 x 2 plots which shows the relationship of datetime to Global Active Power, Voltage, Energy sub metering and Global reactive power respectively. 
+- **[plot4.png](https://github.com/airbj31/04ExpDataAnalysis/blob/master/week1/plot4.png)** 2 x 2 plots which shows the relationship of datetime to Global Active Power, Voltage, Energy sub metering and Global reactive power respectively. 
     
 ## Description of the analysis
 
