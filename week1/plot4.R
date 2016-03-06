@@ -23,5 +23,5 @@ legend("topright", lty=1, cex=1,col=c("black","red","blue"),legend=c("Sub_meteri
 with(tdf,plot(DateTime,Global_reactive_power,type="n",main="",xlab="datetime"))
 with(tdf,lines(DateTime,Global_reactive_power))
 
-dev.copy(device=png, "plot1.png",unit="px",width=480,height=480)
+dev.copy(device=png, "plot4.png",unit="px",width=480,height=480)
 dev.off()
