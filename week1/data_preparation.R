@@ -3,7 +3,7 @@
 ### make a function to check the library installed
 ### if yes, it load the libraries.
 ### if no, stop the script.
-source("./LoadLIB.R")
+source("https://raw.githubusercontent.com/airbj31/04ExpDataAnalysis/master/week1/LoadLIB.R")
 
 ## set locale for non-english langaage user.
 ## this is required to print weekdays in English.
