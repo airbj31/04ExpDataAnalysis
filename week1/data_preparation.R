@@ -41,8 +41,8 @@ dfile2<-paste(dir,dfile,sep="/")
 
 
 ## Download and unzip of the file
-## download.file(fileURL,destfile=dfile2)
-## unzip(dfile2,exdir=dir)
+download.file(fileURL,destfile=dfile2)
+unzip(dfile2,exdir=dir)
 
 ## Read Data
 data<-read.table("./data/household_power_consumption.txt",sep=";",header=T,nrows=2075259,na.strings = "?")
